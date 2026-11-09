@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane style="-fx-background-color: #0F172A;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="edu.utj.dsm.poo.hotel.controlador.LoginController">
+   <children>
+      <VBox alignment="CENTER" spacing="15.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 12;" maxWidth="380.0">
+         <padding>
+            <Insets top="35.0" right="40.0" bottom="35.0" left="40.0"/>
+         </padding>
+         <children>
+            <Label text="Grand Hotel" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #0F172A;" />
+            <Label text="Bienvenido al Sistema" style="-fx-font-size: 14px; -fx-text-fill: #64748B;" />
+            
+            <!-- Campos visuales listos para MariaDB / SQL -->
+            <TextField fx:id="txtUsuario" promptText="Usuario" style="-fx-background-color: #F8FAFC; -fx-border-color: #CBD5E1; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 10;" />
+            <PasswordField fx:id="txtPassword" promptText="Contraseña" style="-fx-background-color: #F8FAFC; -fx-border-color: #CBD5E1; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 10;" />
+            
+            <Button text="Entrar" onAction="#handleEntrar" maxWidth="1.7976931348623157E308" style="-fx-background-color: #0284C7; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-padding: 10 20; -fx-cursor: hand;" />
+            <Button text="Cerrar Aplicación" onAction="#handleCerrar" style="-fx-background-color: transparent; -fx-text-fill: #EF4444; -fx-font-weight: bold; -fx-cursor: hand;" />
+         </children>
+      </VBox>
+   </children>
+</StackPane>

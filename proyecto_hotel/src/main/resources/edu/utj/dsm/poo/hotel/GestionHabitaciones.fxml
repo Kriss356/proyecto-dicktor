@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utj.dsm.poo.hotel.controlador.GestionHabitacionesController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="58.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Gestión de Habitaciones">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </HBox>
+   </top>
+   <left>
+      <GridPane hgap="8.0" vgap="2.0" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="110.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="170.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Número:" />
+            <VBox GridPane.columnIndex="1"><children><TextField fx:id="txtNumero" /><Label fx:id="errNumero" style="-fx-text-fill: #c62828; -fx-font-size: 10px;" /></children></VBox>
+            <Label text="Tipo:" GridPane.rowIndex="1" />
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="1"><children><ComboBox fx:id="cbTipo" prefWidth="170.0" /><Label fx:id="errTipo" style="-fx-text-fill: #c62828; -fx-font-size: 10px;" /></children></VBox>
+            <Label text="Piso:" GridPane.rowIndex="2" />
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="2"><children><TextField fx:id="txtPiso" /><Label fx:id="errPiso" style="-fx-text-fill: #c62828; -fx-font-size: 10px;" /></children></VBox>
+            <Label text="Precio por noche:" GridPane.rowIndex="3" />
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="3"><children><TextField fx:id="txtPrecio" /><Label fx:id="errPrecio" style="-fx-text-fill: #c62828; -fx-font-size: 10px;" /></children></VBox>
+            <Label text="Capacidad:" GridPane.rowIndex="4" />
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="4"><children><TextField fx:id="txtCapacidad" /><Label fx:id="errCapacidad" style="-fx-text-fill: #c62828; -fx-font-size: 10px;" /></children></VBox>
+            <Label text="Número de camas:" GridPane.rowIndex="5" />
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="5"><children><TextField fx:id="txtCamas" /><Label fx:id="errCamas" style="-fx-text-fill: #c62828; -fx-font-size: 10px;" /></children></VBox>
+            <Label text="Estado:" GridPane.rowIndex="6" />
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="6"><children><ComboBox fx:id="cbEstado" prefWidth="170.0" /><Label fx:id="errEstado" style="-fx-text-fill: #c62828; -fx-font-size: 10px;" /></children></VBox>
+            <CheckBox fx:id="chkBalcon" mnemonicParsing="false" text="Balcón (sencilla)" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+            <CheckBox fx:id="chkVistaAlMar" mnemonicParsing="false" text="Vista al mar (sencilla)" GridPane.columnSpan="2" GridPane.rowIndex="8" />
+            <CheckBox fx:id="chkJacuzzi" mnemonicParsing="false" text="Jacuzzi (suite)" GridPane.columnSpan="2" GridPane.rowIndex="9" />
+            <CheckBox fx:id="chkMiniBar" mnemonicParsing="false" text="Minibar (suite)" GridPane.columnSpan="2" GridPane.rowIndex="10" />
+            <CheckBox fx:id="chkDesayuno" mnemonicParsing="false" text="Incluye desayuno (suite)" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+            
+            <!-- Componentes añadidos para gestión de imagen -->
+            <VBox alignment="CENTER" spacing="6.0" GridPane.columnSpan="2" GridPane.rowIndex="12">
+               <children>
+                  <ImageView fx:id="imgVistaPrevia" fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-color: #CBD5E1; -fx-border-radius: 4;" />
+                  <Button mnemonicParsing="false" onAction="#seleccionarImagen" style="-fx-background-color: #0284C7; -fx-text-fill: white; -fx-cursor: hand;" text="📁 Seleccionar Imagen" />
+               </children>
+               <padding>
+                  <Insets top="6.0" />
+               </padding>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </GridPane>
+   </left>
+   <center>
+      <TableView fx:id="tblHabitaciones" prefHeight="400.0" prefWidth="520.0" BorderPane.alignment="CENTER">
+         <columns>
+            <TableColumn fx:id="colNumero" prefWidth="80.0" text="Número" />
+            <TableColumn fx:id="colTipo" prefWidth="90.0" text="Tipo" />
+            <TableColumn fx:id="colPiso" prefWidth="60.0" text="Piso" />
+            <TableColumn fx:id="colPrecio" prefWidth="100.0" text="Precio/noche" />
+            <TableColumn fx:id="colCapacidad" prefWidth="85.0" text="Capacidad" />
+            <TableColumn fx:id="colEstado" prefWidth="100.0" text="Estado" />
+         </columns>
+      </TableView>
+   </center>
+   <bottom>
+      <HBox spacing="8.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#guardarHabitacion" text="Guardar" />
+            <Button fx:id="btnValidar" mnemonicParsing="false" onAction="#validarFormulario" text="Validar" />
+            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#limpiarCampos" text="Cancelar" />
+            <Button fx:id="btnLimpiar" mnemonicParsing="false" onAction="#limpiarCampos" text="Nuevo / Limpiar" />
+            <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#editarHabitacion" text="Editar / Actualizar" />
+            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminarHabitacion" text="Eliminar" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane>

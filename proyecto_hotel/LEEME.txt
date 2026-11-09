@@ -1,0 +1,25 @@
+PROYECTO HOTEL - CONEXION A MYSQL (XAMPP)
+=========================================
+
+1) CREAR LA BASE DE DATOS
+   - Abre el Panel de XAMPP y presiona "Start" en Apache y en MySQL.
+   - Entra a http://localhost/phpmyadmin
+   - Pestaña "Importar" -> "Seleccionar archivo" -> database/hotel_db.sql -> "Importar".
+   - Se crea la base "hotel_db" con datos de prueba.
+     (OJO: si ya tenias una hotel_db, el script la borra y la crea de nuevo.)
+
+2) ABRIR EN NETBEANS
+   - File -> Open Project -> selecciona la carpeta "proyecto_hotel" (la que tiene pom.xml).
+   - Clic derecho al proyecto -> "Clean and Build" (la primera vez descarga
+     JavaFX y el driver de MySQL, necesita internet).
+   - Run (F6).
+
+3) ENTRAR AL SISTEMA
+   usuario: admin           contrasena: admin123   (tabla administradores)
+   usuario: recepcion       contrasena: recep123   (tabla empleados)
+   usuario: mantenimiento   contrasena: mant123    (tabla empleados)
+
+4) SI NO CONECTA
+   - El login te dice que fallo (MySQL apagado, falta importar la base, etc.).
+   - Datos de conexion en: src/main/java/edu/utj/dsm/poo/hotel/persistencia/ConexionBD.java
+     (XAMPP por defecto: root sin contrasena, puerto 3306).
